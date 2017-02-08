@@ -16,6 +16,15 @@ public class WhiteBloodCellCritter extends Critter{
 	
 	public void act()
 	{
+		ArrayList<Location> loca = getGrid().getOccupiedLocations();
+		for(Location loc : loca)
+		{
+			Actor a = getGrid().get(loc);
+			if(a instanceof Heart) 
+			{
+				heart = loc;
+			}
+		}
 		if (getGrid() == null) return;
 		ArrayList<Actor> actors = getActors(); 
 		processActors(actors);
@@ -29,7 +38,16 @@ public class WhiteBloodCellCritter extends Critter{
 	
 	public ArrayList<Location> getMoveLocations()
 	{
-		return getGrid().getEmptyAdjacentLocations(heart);
+		ArrayList<Location> locs = getGrid().getEmptyAdjacentLocations(getLocation());
+		for(int i = 0; i < locs.size(); i++)
+		{
+			if(locs.get(i).getCol() < heart.getCol()-2 || locs.get(i).getCol() > heart.getCol()+2 || locs.get(i).getRow() < heart.getRow()-2 || locs.get(i).getRow() > heart.getRow()+2)
+			{
+				locs.remove(i);
+				i--;
+			}
+		}
+		return locs;
 	}
 
 }

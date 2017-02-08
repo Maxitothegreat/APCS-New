@@ -9,8 +9,8 @@ public class SaveMyHeartRunner1
         ActorWorld world = new ActorWorld();
         world.add(new Location(6,6), new Heart());
         world.add(new Location(5,4), new WhiteBloodCellCritter());
-       // world.add(new Location(8,6), new Heart());  // try placing the heart near the boundry
-       // world.add(new Location(7,4), new WhiteBloodCellCritter()); // place the wbc nearby
+//        world.add(new Location(8,6), new Heart());  // try placing the heart near the boundry
+//        world.add(new Location(7,4), new WhiteBloodCellCritter()); // place the wbc nearby
         world.add(new Location(8,1), new Bacteria1());  // note that this is BacteriaONE
         world.show();
     }
