@@ -1,3 +1,7 @@
+/*
+ * Max Porter 2/10/2017
+ * GridWorld Level 01
+ */
 import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;
 import info.gridworld.actor.Rock;
